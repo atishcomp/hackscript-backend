@@ -20,4 +20,18 @@ exports.createUser= (req,res)=>{
    });
 }
 
+//THIS WILL RETURN THE LIST OF ALL USERS
+exports.getAllUsers = (req,res)=>{
+    User.find().exec((err,users)=>{   
+        if(err || !users){
+             return res.status(400).json({
+                 error:"SOME ERROR OCCURRED IN GETTING DATA"
+             })
+        }
+
+        res.json(users);
+
+   })
+}
+
  
