@@ -37,7 +37,7 @@ salt:String, //THIS IS IMPORTANT FOR ENCRYPTION
 
 },{timestamps:true})
 
-//-------------PASSWORD ENCRYPTION DOING HASHING----------
+//-------------PASSWORD ENCRYPTION, HASHING----------
 userSchema.virtual("password")
 .set(function(password){
     this._password=password
@@ -68,7 +68,7 @@ authenticate:function(plainpassword){
         }
     }
 };
-//-------------PASSWORD ENCRYPTION DOING HASHING----------
+//-------------PASSWORD ENCRYPTION, HASHING----------
 
 
 module.exports = mongoose.model("User",userSchema)

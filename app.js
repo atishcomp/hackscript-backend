@@ -26,7 +26,7 @@ mongoose.connect(process.env.DATABASE_CONNECTION,{
     app.use("/",userRoutes);  //*****
 
 app.get('/',(req,res)=>{
-    res.send("WELCOME TO HACKSCRIPT BACKEND SERVICE,updated")
+    res.send("WELCOME TO HACKSCRIPT BACKEND SERVICE,updated(21/12/22)")
   })
 
 //-----------CONNECTING THE DATABASE----------END--
