@@ -62,9 +62,10 @@ exports.getLoginToken = (req,res,next)=>{
  //FETCH USER DATA ACCRORDING TO USERMAIL
 
  exports.getUserDetails = (req,res)=>{
-    
+     //--------------RAMAN KUMAR-------START----
      const search_mail=req.query.usermail;
 
 
     //return data in res.json
+    //----------------RAMAN KUMAR--------END---
  }
