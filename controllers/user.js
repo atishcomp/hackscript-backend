@@ -62,10 +62,20 @@ exports.getLoginToken = (req,res,next)=>{
  //FETCH USER DATA ACCRORDING TO USERMAIL
 
  exports.getUserDetails = (req,res)=>{
-     //--------------RAMAN KUMAR-------START----
-     const search_mail=req.query.usermail;
-
-
+    //--------------RAMAN KUMAR-------START----
+    const search_mail=req.query.usermail;
+    // console.log(req.query);
+    User.findOne({usermail : search_mail}).exec((err,user)=>{
+       if(err || !user){
+           return res.status(400).json({
+               error:"User does not exist"
+           });
+       }
+       res.json({
+           firstName : user.first_name,
+           lastName : user.last_name
+       });
+    });
     //return data in res.json
     //----------------RAMAN KUMAR--------END---
  }
